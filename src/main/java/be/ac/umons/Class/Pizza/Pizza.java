@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Pizza {
     private String name;
-    private float price = 0;
+    private double price = 0;
     private ArrayList<Ingredient> listIngredients;
 
     public Pizza(){this.name="Default Pizza";}
@@ -19,8 +19,8 @@ public class Pizza {
         this.name = name;
     }
 
-    public float getPrice() { return price; }
-    public void setPrice(float price) {
+    public double getPrice() { return price; }
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -35,7 +35,7 @@ public class Pizza {
         Final += "\t";
         for(Ingredient i:listIngredients){ Final += i.getName() + " "; }
         Final += "\t";
-        Final += Float.toString(this.price);
+        Final += Double.toString(this.price);
         return Final;
     }
 }
