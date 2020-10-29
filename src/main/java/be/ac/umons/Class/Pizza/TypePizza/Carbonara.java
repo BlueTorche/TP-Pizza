@@ -3,11 +3,11 @@ package be.ac.umons.Class.Pizza.TypePizza;
 import be.ac.umons.Class.Ingredient.TypeIngredient.*;
 import be.ac.umons.Class.Pizza.Pizza;
 
-public class FruttiDiMare extends Pizza {
-    public FruttiDiMare(){
+public class Carbonara extends Pizza {
+    public Carbonara(){
         addIngredient(new Dough());
-        addIngredient(new TomatoSauce());
-        addIngredient(new SeaFood());
+        addIngredient(new WhiteCream());
+        addIngredient(new Ham());
         addIngredient(new Cheese());
-    };
+    }
 }
