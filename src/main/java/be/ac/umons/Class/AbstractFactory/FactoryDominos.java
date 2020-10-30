@@ -1,25 +1,23 @@
 package be.ac.umons.Class.AbstractFactory;
 
 import be.ac.umons.Class.Pizza.Pizza;
-import be.ac.umons.Class.Pizza.TypePizza.FruttiDiMare;
-import be.ac.umons.Class.Pizza.TypePizza.Prosciutto;
+import be.ac.umons.database.DBSingleton;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.Objects;
 
-public class FactoryHut extends AbstractFactory {
+public class FactoryDominos extends AbstractFactory{
     private static String FactoryHut;
     private static int stock[];
-    private static FactoryHut instance = null;
+    private static FactoryDominos instance = null;
+
 
     @Override
     String getFactory() { return FactoryHut; }
 
     @Override
     Pizza createPizza(String name) {
-        name= "be.ac.umons.Class.Pizza.TypePizza." + name + "Hut";
+        name= "be.ac.umons.Class.Pizza.TypePizza." + name;
 
         try {
             Class<?> nameClass = Class.forName(name);
@@ -38,9 +36,9 @@ public class FactoryHut extends AbstractFactory {
         return new Pizza();
     }
 
-    public static FactoryHut getSingleton() {
+    public static FactoryDominos getSingleton() {
         if (instance == null) {
-            instance = new FactoryHut();
+            instance = new FactoryDominos();
         }
         return instance;
     }

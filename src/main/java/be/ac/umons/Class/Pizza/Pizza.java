@@ -1,10 +1,11 @@
 package be.ac.umons.Class.Pizza;
 
 import be.ac.umons.Class.Ingredient.Ingredient;
+import be.ac.umons.Class.PizzaComponent;
 
 import java.util.ArrayList;
 
-public class Pizza {
+public class Pizza implements PizzaComponent {
     private String name;
     private double price = 0;
     private ArrayList<Ingredient> listIngredients;
@@ -14,12 +15,16 @@ public class Pizza {
         this.name = name;
     }
 
+    @Override
     public String getName() { return name; }
+    @Override
     public void setName(String name) {
         this.name = name;
     }
 
+    @Override
     public double getPrice() { return price; }
+    @Override
     public void setPrice(double price) {
         this.price = price;
     }
