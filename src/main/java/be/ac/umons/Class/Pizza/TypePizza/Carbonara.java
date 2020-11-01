@@ -5,9 +5,9 @@ import be.ac.umons.Class.Pizza.Pizza;
 
 public class Carbonara extends Pizza {
     public Carbonara(){
-        addIngredient(new Dough());
-        addIngredient(new WhiteCream());
-        addIngredient(new Ham());
-        addIngredient(new Cheese());
+        this.addIngredient(new Dough());
+        this.addIngredient(new WhiteCream());
+        this.addIngredient(new Ham());
+        this.addIngredient(new Cheese());
     }
 }

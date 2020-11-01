@@ -35,6 +35,7 @@ public class Pizza implements PizzaComponent {
         this.price += ingredient.getPrice();
     }
 
+    @Override
     public String toString(){
         String Final = this.name;
         Final += "\t";

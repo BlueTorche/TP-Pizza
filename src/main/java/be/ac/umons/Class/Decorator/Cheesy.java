@@ -4,6 +4,8 @@ import be.ac.umons.Class.Pizza.Pizza;
 
 public class Cheesy extends DecoratorPizza{
     private double suplément = 2; // à l'avenir on pourrait utiliser une DB
+
+
     public Cheesy(){}
 
     public Pizza DecoratePizza(Pizza p){

@@ -5,9 +5,9 @@ import be.ac.umons.Class.Pizza.Pizza;
 
 public class FruttiDiMare extends Pizza {
     public FruttiDiMare(){
-        addIngredient(new Dough());
-        addIngredient(new TomatoSauce());
-        addIngredient(new SeaFood());
-        addIngredient(new Cheese());
+        this.addIngredient(new Dough());
+        this.addIngredient(new TomatoSauce());
+        this.addIngredient(new SeaFood());
+        this.addIngredient(new Cheese());
     };
 }

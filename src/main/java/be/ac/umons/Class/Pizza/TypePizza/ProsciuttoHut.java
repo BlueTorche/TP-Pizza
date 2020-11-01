@@ -5,6 +5,6 @@ import be.ac.umons.Class.Ingredient.TypeIngredient.Olive;
 public class ProsciuttoHut extends Prosciutto{
     public ProsciuttoHut(){
         super();
-        addIngredient(new Olive());
+        this.addIngredient(new Olive());
     }
 }

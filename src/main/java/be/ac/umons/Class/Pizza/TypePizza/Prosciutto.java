@@ -8,10 +8,10 @@ import be.ac.umons.Class.Pizza.Pizza;
 
 public class Prosciutto extends Pizza {
     public Prosciutto() {
-            addIngredient(new Dough());
-            addIngredient(new TomatoSauce());
-            addIngredient(new Ham());
-            addIngredient(new Cheese());
+        this.addIngredient(new Dough());
+        this.addIngredient(new TomatoSauce());
+        this.addIngredient(new Ham());
+        this.addIngredient(new Cheese());
     };
 
 
