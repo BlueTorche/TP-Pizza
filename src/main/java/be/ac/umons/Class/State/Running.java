@@ -10,20 +10,12 @@ public class Running implements State{
 
     @Override
     public void menu(StateContext context) {
-        System.out.println("Welcomme to Pizzatron 9000");
-        System.out.println("Souhaitez vous passez (C)ommande, accéder aux (O)ptions ou (Q)uitter ?");
-
-        Scanner s = new Scanner(System.in);
-        String answ = s.nextLine();
-
-        if(answ.equals("C")) context.carte(context);
-        if(answ.equals("O")) this.option(context);
-        else System.out.println("Bye");
+        CommonTask.showMenu(context);
     }
 
     @Override
     public void carte(StateContext context){
-        ArrayList<Pizza> carte = new ArrayList<>();
+        LinkedList<Pizza> carte = new LinkedList<>();
         Reflections reflections = new Reflections("be.ac.umons.Class.Pizza");
 
         Set<Class<? extends Pizza>> classSet = reflections.getSubTypesOf(Pizza.class);
@@ -40,22 +32,37 @@ public class Running implements State{
 
         while(run){
             System.out.println("Sélectioné:");
-            it.toString();
+            System.out.println(it.next().toString());
+            it.previous();
             System.out.println("(C)ommander, (P)récédent, (S)uivant,(M)enu,(Q)uitter");
 
             Scanner s = new Scanner(System.in);
             String answ = s.nextLine();
 
-            if(answ.equals("C")) context.commande(context,it.next());
-            if(answ.equals("P")){
-                if(!it.hasPrevious()) while(it.hasNext()) it.next();
-                else it.previous();
+            switch (answ) {
+                case "C" :
+                    context.commande(context,it.next());
+                    break;
+
+                case "P":
+                    if (!it.hasPrevious()){
+                        while (it.hasNext()) it.next() ;
+                        it.previous();
+                    }
+                    else it.previous();
+                    break;
+
+                case "S":
+                    it.next();
+                    if (!it.hasNext()){
+                        while (it.hasPrevious()) it.previous();
+                    }
+                    break;
+
+                case "Q":
+                    run = false;
+                    break;
             }
-            if(answ.equals("S")){
-                if(!it.hasNext()) while(it.hasPrevious()) it.previous();
-                else it.next();
-            }
-            if(answ.equals("M")) context.menu(context);
         }
     }
 
